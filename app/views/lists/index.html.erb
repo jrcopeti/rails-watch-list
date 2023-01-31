@@ -1,5 +1,6 @@
 <h1>My awesome watch list</h1>
 <br>
+<%= cl_image_tag("voetjwd6xp7fnblg1vmg", width: 400, height: 300, crop: :fill) %>
 <ul>
   <% @lists.each do |list| %>
     <li><%= link_to list.name, list_path(list) %></li>
