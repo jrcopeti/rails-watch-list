@@ -1,11 +1,11 @@
-<h1>MY LISTS</h1>
-
+<h1>My awesome watch list</h1>
+<br>
 <ul>
   <% @lists.each do |list| %>
-    <li>
-      <%= link_to list.name, list_path(list.id) %>
-    </li>
-  <% end %>
-</ul>
+    <li><%= link_to list.name, list_path(list) %></li>
+    <%= link_to "delete this list", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 
-<%= link_to "Add a new List", new_list_path, class: 'btn btn-primary' %>
+<% end %>
+</ul>
+<br>
+<%= link_to "Create a new list", new_list_path %>
